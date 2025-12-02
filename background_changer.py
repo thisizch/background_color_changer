@@ -44,7 +44,7 @@ def change_background_color(img: Image.Image, threshold: int = 30):
     mask = diff < threshold
 
     # 새 배경색 (알파는 기존 알파 사용)
-    new_r, new_g, new_b, _ = generate_random_color()
+    new_r, new_g, new_b, = generate_random_color()
 
     # 마스크가 True인 부분만 색 변경 (알파 채널은 그대로 두기)
     arr[mask, 0] = new_r
